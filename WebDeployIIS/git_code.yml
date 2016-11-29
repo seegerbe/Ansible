@@ -19,7 +19,7 @@
 
       - name: Pull html file
         win_get_url: 
-          url: 'https://raw.githubusercontent.com/bambino0429/website.git'
+          url: 'https://raw.githubusercontent.com/bambino0429/website/index.html'
           dest: 'C:\sites\oakgov\index.html'
 
       - name: OakGov IIS site
