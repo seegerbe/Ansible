@@ -3,19 +3,16 @@
 
   - name: Deploy site to IIS
     hosts: all
-    tasks:
+    handlers:
       #add IIS install
        - include: windows/enable-iis.yml
 
-#      - name: Make sure windows is configure for ansible remote management
-#        win_get_url: 
-#          url: 'https://raw.githubusercontent.com/ansible/ansible/blob/devel/examples/scripts/ConfigureRemotingForAnsible.ps1'
-
+    tasks:
 #      - name: Add oakgov directory
 #        file:
 #          path: 'c:\sites\oakgov\'
 #          state: directory
-#         owner: seegerbe@msuoc.net
+#          owner: seegerbe@msuoc.net
 #          mode: 0775
 
       - name: Pull html file
