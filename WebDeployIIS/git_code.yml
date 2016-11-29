@@ -5,6 +5,10 @@
     hosts: all
     tasks:
       #add IIS install
+
+      - name: Make sure windows is configure for ansible remote management
+        git: repo=https://github.com/ansible/ansible/blob/devel/examples/scripts/ConfigureRemotingForAnsible.ps1
+
       - name: Add oakgov directory
         file:
           path: 'c:\sites\oakgov\'
