@@ -18,17 +18,13 @@
 #               include_sub_features: yes
 #               include_management_tools: yes
 
-#      - name: Add oakgov directory
-#        file:
-#          path: 'c:\sites\oakgov\'
-#          state: directory
-#          owner: seegerbe@msuoc.net
-#          mode: 0775
+      - name: Add oakgov directory
+        script: create_folder_web.ps1
 
       - name: Pull html file
         win_get_url: 
           url: 'https://raw.githubusercontent.com/bambino0429/website/master/index.html'
-          dest: 'C:\sites\oakgovtest\index.html'
+          dest: 'C:\sites\oakgov\index.html'
           skip_certificate_validation: true
 
       - name: OakGov IIS site
@@ -36,6 +32,6 @@
           name: "OakGovTest"
           state: started
           hostname: oakgovtest.local
-          physical_path: 'c:\sites\oakgovtest'
-          parameters: 'logfile.directory:c:\sites\testlogs'
+          physical_path: 'c:\sites\oakgov'
+          parameters: 'logfile.directory:c:\sites\test'
         register: website
