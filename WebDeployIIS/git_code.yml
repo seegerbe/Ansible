@@ -7,7 +7,8 @@
       #add IIS install
 
       - name: Make sure windows is configure for ansible remote management
-        git: repo=https://github.com/ansible/ansible/blob/devel/examples/scripts/ConfigureRemotingForAnsible.ps1
+        win_get_url: 
+          url: 'https://raw.githubusercontent.com/ansible/ansible/blob/devel/examples/scripts/ConfigureRemotingForAnsible.ps1'
 
 #      - name: Add oakgov directory
 #        file:
@@ -17,7 +18,8 @@
 #          mode: 0775
 
       - name: Pull html file
-        git: repo=https://github.com/bambino0429/website.git
+        win_get_url: 
+          url: 'https://raw.githubusercontent.com/bambino0429/website.git'
 
       - name: OakGov IIS site
         win_iis_website:
