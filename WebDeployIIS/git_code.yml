@@ -5,7 +5,7 @@
     hosts: all
     handlers:
       #add IIS install
-       - include: windows/enable-iis.yml
+       - include: enable-iis.yml
 
     tasks:
 #      - name: Add oakgov directory
