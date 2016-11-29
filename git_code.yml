@@ -1,0 +1,11 @@
+# IIS website test
+---
+
+- name: OakGov IIS site
+  win_iis_website:
+	name: "OakGov"
+	state: started
+	hostname: oakgov.local
+	physical_path: 'c:\sites\oakgov'
+	parameters: 'logfile.directory:c:\sites\logs'
+  register: website
