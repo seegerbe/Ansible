@@ -5,6 +5,7 @@
     hosts: all
     tasks:
       #add IIS install
+       - include: windows/enable-iis.yml
 
 #      - name: Make sure windows is configure for ansible remote management
 #        win_get_url: 
