@@ -19,14 +19,14 @@
 #               include_management_tools: yes
 
       - name: Add oakgov directory
-        win_file:
-          path: "C:\sites\oakgov"
-          state: directory
+        win_file: path=C:\sites\oakgov state=directory
+#          path: "C:\sites\oakgov"
+#          state: directory
 
       - name: Add log directory
-        win_file:
-          path: "C:\sites\log"
-          state: directory
+        win_file: path=C:\sites\log state=directory
+#          path: "C:\sites\log"
+#          state: directory
 
       - name: Pull html file
         win_get_url: 
