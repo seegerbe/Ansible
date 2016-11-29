@@ -19,7 +19,7 @@
 #               include_management_tools: yes
 
       - name: Add oakgov directory
-        win_file: path=C:\sites\oakgov state=directory
+        win_file: path=C:\inetpub\wwwroot\oakgov state=directory
 #          path: "C:\sites\oakgov"
 #          state: directory
 
@@ -31,7 +31,7 @@
       - name: Pull html file
         win_get_url: 
           url: 'https://raw.githubusercontent.com/bambino0429/website/master/index.html'
-          dest: 'C:\sites\oakgov\index.html'
+          dest: 'C:\inetpub\wwwroot\oakgov\index.html'
           skip_certificate_validation: true
 
       - name: OakGov IIS site
@@ -39,6 +39,6 @@
           name: "OakGov"
           state: started
           hostname: oakgov.local
-          physical_path: 'c:\sites\oakgov'
+          physical_path: 'c:\inetpub\wwwroot\oakgov'
           parameters: 'logfile.directory:c:\sites\log'
         register: website
