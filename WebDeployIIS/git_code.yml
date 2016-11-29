@@ -1,13 +1,23 @@
 ---
 # IIS website test
+  - include: enable-iis.yml
 
   - name: Deploy site to IIS
     hosts: all
-#    handlers:
-      #add IIS install
-#       - include: enable-iis.yml
-
     tasks:
+#       # taken from ansible-examples github
+#       - name: Install IIS
+#         hosts: all
+#         gather_facts: false
+#         tasks:
+#           - name: Install IIS
+#             win_feature:
+#               name: "Web-Server"
+#               state: present
+#               restart: yes
+#               include_sub_features: yes
+#               include_management_tools: yes
+
 #      - name: Add oakgov directory
 #        file:
 #          path: 'c:\sites\oakgov\'
@@ -29,5 +39,3 @@
           physical_path: 'c:\sites\oakgov'
           parameters: 'logfile.directory:c:\sites\logs'
         register: website
-
-  - include: enable-iis.yml
