@@ -19,7 +19,7 @@
 
       - name: Pull html file
         win_get_url: 
-          url: 'https://github.com/bambino0429/website/blob/master/index.html'
+          url: 'https://raw.githubusercontent.com/bambino0429/website/blob/master/index.html'
           dest: 'C:\sites\oakgov\index.html'
           skip_certificate_validation: true
 
